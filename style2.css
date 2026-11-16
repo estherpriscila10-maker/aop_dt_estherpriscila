@@ -1,6 +1,6 @@
 :root {
     --primary: #111111;
-    --primary-hover: #f0f0f0;
+    --primary-hover: #2b2b2b;
     --accent: #333333;
     --bg-page: #f2f2f2;
     --bg-card: #ffffff;
@@ -41,7 +41,7 @@ body {
 
 .esther-profile-section {
     display: flex;
-    gap: 1.75rem;
+    gap: 1.5rem;
     align-items: stretch;
     padding: 1.75rem;
     border: 1.5px solid var(--border-color);
@@ -77,7 +77,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     background-color: #e5e5e5;
-    border: 1.5px solid var(--border-color);
+    border: 2px solid var(--border-color);
     box-shadow: var(--shadow-sm);
 }
 
@@ -97,8 +97,8 @@ body {
     display: block;
     width: 100%;
     text-align: center;
-    background-color: #ffffff;
-    color: var(--text-main);
+    background-color: var(--primary);
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.875rem;
     font-weight: 600;
@@ -131,10 +131,10 @@ body {
 .esther-main-header h1 {
     font-size: clamp(1.5rem, 2.8vw, 2rem);
     font-weight: 800;
-    color: var(--text-main);
+    color: #ffffff;
     letter-spacing: -0.02em;
     line-height: 1.2;
-    background-color: #ffffff;
+    background-color: var(--primary);
     border: 1.5px solid var(--border-color);
     border-radius: 8px;
     padding: 0.65rem 1rem;
@@ -143,7 +143,7 @@ body {
 .esther-main-header h2 {
     font-size: clamp(0.95rem, 1.6vw, 1.1rem);
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-main);
     background-color: #ffffff;
     border: 1.5px solid var(--border-color);
     border-radius: 8px;
@@ -198,19 +198,24 @@ body {
 
 .esther-side-blocks {
     flex-shrink: 0;
-    width: 36px;
-    border: 1.5px solid var(--border-color);
-    border-radius: 8px;
-    background-color: #ffffff;
-    padding: 5px;
+    width: 28px;
     display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.esther-side-block-inner {
-    flex: 1;
+.esther-side-block-top {
+    height: 92px;
+    background-color: var(--primary);
     border: 1.5px solid var(--border-color);
-    border-radius: 4px;
-    background-color: var(--bg-subtle);
+    border-radius: 8px;
+}
+
+.esther-side-block-bottom {
+    flex: 1;
+    background-color: var(--primary);
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
 }
 
 section {
@@ -227,8 +232,8 @@ section {
 }
 
 .esther-section-title span {
-    background-color: #ffffff;
-    color: var(--text-main);
+    background-color: var(--primary);
+    color: #ffffff;
     padding: 0.5rem 1.1rem;
     border-radius: 8px;
     border: 1.5px solid var(--border-color);
@@ -263,11 +268,11 @@ section {
 }
 
 .esther-card-formal {
-    border-top: 4px solid var(--primary);
+    border-top: 5px solid var(--primary);
 }
 
 .esther-card-skills {
-    border-top: 4px solid var(--accent);
+    border-top: 5px solid var(--primary);
 }
 
 .esther-card-overlay {
@@ -283,14 +288,14 @@ section {
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.05em;
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.65rem;
     border-radius: 999px;
     border: 1px solid var(--border-color);
 }
 
 .esther-badge-blue {
-    background-color: #ffffff;
-    color: var(--text-main);
+    background-color: var(--primary);
+    color: #ffffff;
 }
 
 .esther-card-sub-info {
@@ -334,7 +339,18 @@ section {
 
     .esther-side-blocks {
         width: 100%;
-        height: 24px;
+        flex-direction: row;
+        height: 16px;
+    }
+
+    .esther-side-block-top {
+        width: 30%;
+        height: 100%;
+    }
+
+    .esther-side-block-bottom {
+        flex: 1;
+        height: 100%;
     }
 
     .esther-card-grid.esther-unified-3-col {
