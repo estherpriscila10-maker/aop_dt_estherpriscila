@@ -6,60 +6,8 @@
   <title>Login</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="loginstyle.css">
-  <style>
-    .is-hidden {
-      display: none;
-    }
-
-    .status-banner {
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      text-align: center;
-    }
-
-    .status-banner.is-error {
-      background-color: #fee2e2;
-      color: #b91c1c;
-      border: 1px solid #f87171;
-    }
-
-    .status-banner.is-success {
-      background-color: #dcfce7;
-      color: #15803d;
-      border: 1px solid #4ade80;
-    }
-
-    .auth-footer-switch {
-      margin-top: 16px;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    .switch-trigger {
-      cursor: pointer;
-    }
-
-    /* Pure CSS Form Switching (No JS) */
-    .register-heading,
-    #form-register {
-      display: none;
-    }
-
-    #mode-toggle:checked ~ .auth-container .signin-heading,
-    #mode-toggle:checked ~ .auth-container #form-signin {
-      display: none;
-    }
-
-    #mode-toggle:checked ~ .auth-container .register-heading,
-    #mode-toggle:checked ~ .auth-container #form-register {
-      display: block;
-    }
-  </style>
 </head>
 <body class="auth-page">
-  <!-- Hidden toggle to switch between Login and Register without JS -->
   <input type="checkbox" id="mode-toggle" class="is-hidden" aria-hidden="true">
 
   <main class="auth-container">
@@ -71,16 +19,13 @@
           <img src="logo.png" alt="Logo" class="auth-logo">
         </div>
 
-        <!-- Login Headings -->
         <h1 class="auth-title signin-heading">Masuk ke akun Anda</h1>
         <p class="auth-subtitle signin-heading">Gunakan username dan password sekolah.</p>
 
-        <!-- Register Headings -->
         <h1 class="auth-title register-heading">Buat akun baru</h1>
         <p class="auth-subtitle register-heading">Daftar untuk membuat akun sekolah Anda.</p>
       </header>
 
-      <!-- Form Masuk -->
       <form id="form-signin" class="auth-form" action="CV2.html" method="GET">
         <div class="field-group">
           <label for="signin-user" class="field-label">Username</label>
@@ -89,9 +34,7 @@
 
         <div class="field-group">
           <label for="signin-pass" class="field-label">Password</label>
-          <div class="password-field">
-            <input type="password" id="signin-pass" name="password" class="field-input password-input" required>
-          </div>
+          <input type="password" id="signin-pass" name="password" class="field-input" required>
         </div>
 
         <div class="auth-meta-row">
@@ -110,7 +53,6 @@
         </footer>
       </form>
 
-      <!-- Form Daftar -->
       <form id="form-register" class="auth-form" action="CV2.html" method="GET">
         <div class="field-group">
           <label for="reg-user" class="field-label">Buat Username</label>
@@ -119,16 +61,12 @@
 
         <div class="field-group">
           <label for="reg-pass" class="field-label">Buat Password</label>
-          <div class="password-field">
-            <input type="password" id="reg-pass" name="new_password" class="field-input password-input" required>
-          </div>
+          <input type="password" id="reg-pass" name="new_password" class="field-input" required>
         </div>
 
         <div class="field-group">
           <label for="reg-confirm" class="field-label">Konfirmasi Password</label>
-          <div class="password-field">
-            <input type="password" id="reg-confirm" name="confirm_password" class="field-input password-input" required>
-          </div>
+          <input type="password" id="reg-confirm" name="confirm_password" class="field-input" required>
         </div>
 
         <button type="submit" class="btn-primary">Daftar</button>
