@@ -3,89 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Sekolah — Masuk</title>
+  <title>Login</title>
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="loginstyle.css">
+  <style>
+    .is-hidden {
+      display: none;
+    }
+
+    .status-banner {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .status-banner.is-error {
+      background-color: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #f87171;
+    }
+
+    .status-banner.is-success {
+      background-color: #dcfce7;
+      color: #15803d;
+      border: 1px solid #4ade80;
+    }
+
+    .auth-footer-switch {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .switch-trigger {
+      cursor: pointer;
+    }
+
+    /* Pure CSS Form Switching (No JS) */
+    .register-heading,
+    #form-register {
+      display: none;
+    }
+
+    #mode-toggle:checked ~ .auth-container .signin-heading,
+    #mode-toggle:checked ~ .auth-container #form-signin {
+      display: none;
+    }
+
+    #mode-toggle:checked ~ .auth-container .register-heading,
+    #mode-toggle:checked ~ .auth-container #form-register {
+      display: block;
+    }
+  </style>
 </head>
-<body>
+<body class="auth-page">
+  <!-- Hidden toggle to switch between Login and Register without JS -->
+  <input type="checkbox" id="mode-toggle" class="is-hidden" aria-hidden="true">
 
-  <div class="auth-wrapper">
-    <aside class="brand-panel">
-      <div class="brand-content">
-        <h2 class="brand-heading">Selamat Datang di Portal Akademik</h2>
-        <p class="brand-desc">Akses informasi nilai, jadwal, dan profil siswa dalam satu pintu yang terintegrasi.</p>
-      </div>
-      <footer class="brand-footer">
-        <small>&copy; 2026 Sistem Informasi Sekolah</small>
-      </footer>
-    </aside>
+  <main class="auth-container">
+    <div class="auth-accent-bar"></div>
+    
+    <section class="auth-body">
+      <header class="auth-header">
+        <div class="auth-logo-box">
+          <img src="logo.png" alt="Logo" class="auth-logo">
+        </div>
 
-    <main class="form-panel">
-      <div class="form-container">
-        <input type="radio" name="auth-tab" id="tab-login" class="tab-radio" checked>
-        <input type="radio" name="auth-tab" id="tab-signup" class="tab-radio">
+        <!-- Login Headings -->
+        <h1 class="auth-title signin-heading">Masuk ke akun Anda</h1>
+        <p class="auth-subtitle signin-heading">Gunakan username dan password sekolah.</p>
 
-        <nav class="tab-nav">
-          <label for="tab-login" class="tab-btn">Masuk</label>
-          <label for="tab-signup" class="tab-btn">Daftar Akun</label>
-        </nav>
+        <!-- Register Headings -->
+        <h1 class="auth-title register-heading">Buat akun baru</h1>
+        <p class="auth-subtitle register-heading">Daftar untuk membuat akun sekolah Anda.</p>
+      </header>
 
-        <section id="panel-login" class="auth-section">
-          <header class="section-header">
-            <h1>Masuk ke Akun</h1>
-            <p>Gunakan kredensial sekolah Anda untuk melanjutkan.</p>
-          </header>
+      <!-- Form Masuk -->
+      <form id="form-signin" class="auth-form" action="CV2.html" method="GET">
+        <div class="field-group">
+          <label for="signin-user" class="field-label">Username</label>
+          <input type="text" id="signin-user" name="username" class="field-input" required autofocus>
+        </div>
 
-          <form id="login-form" class="auth-form" action="CV2.html" method="GET">
-            <div class="floating-group">
-              <input type="text" id="login-username" name="username" placeholder=" " required autofocus>
-              <label for="login-username">Username</label>
-            </div>
+        <div class="field-group">
+          <label for="signin-pass" class="field-label">Password</label>
+          <div class="password-field">
+            <input type="password" id="signin-pass" name="password" class="field-input password-input" required>
+          </div>
+        </div>
 
-            <div class="floating-group">
-              <input type="password" id="login-password" name="password" placeholder=" " required>
-              <label for="login-password">Password</label>
-            </div>
+        <div class="auth-meta-row">
+          <label class="remember-control">
+            <input type="checkbox" name="remember" class="remember-checkbox">
+            <span class="remember-text">Ingat saya</span>
+          </label>
+          <a href="#" class="auth-link">Lupa password?</a>
+        </div>
 
-            <div class="form-meta">
-              <label class="custom-check">
-                <input type="checkbox" name="remember">
-                <span>Ingat sesi saya</span>
-              </label>
-              <a href="#reset" class="text-link">Lupa password?</a>
-            </div>
+        <button type="submit" class="btn-primary">Masuk</button>
 
-            <button type="submit" class="btn-primary">Masuk Sekarang</button>
-          </form>
-        </section>
+        <footer class="auth-footer-switch">
+          <span>Belum punya akun? </span>
+          <label for="mode-toggle" class="auth-link switch-trigger">Daftar di sini</label>
+        </footer>
+      </form>
 
-        <section id="panel-signup" class="auth-section">
-          <header class="section-header">
-            <h1>Registrasi Siswa</h1>
-            <p>Buat akun baru untuk mengakses sistem sekolah.</p>
-          </header>
+      <!-- Form Daftar -->
+      <form id="form-register" class="auth-form" action="CV2.html" method="GET">
+        <div class="field-group">
+          <label for="reg-user" class="field-label">Buat Username</label>
+          <input type="text" id="reg-user" name="new_username" class="field-input" required>
+        </div>
 
-          <form id="signup-form" class="auth-form" action="CV2.html" method="GET">
-            <div class="floating-group">
-              <input type="text" id="signup-username" name="username" placeholder=" " required>
-              <label for="signup-username">Username Baru</label>
-            </div>
+        <div class="field-group">
+          <label for="reg-pass" class="field-label">Buat Password</label>
+          <div class="password-field">
+            <input type="password" id="reg-pass" name="new_password" class="field-input password-input" required>
+          </div>
+        </div>
 
-            <div class="floating-group">
-              <input type="password" id="signup-password" name="password" placeholder=" " required>
-              <label for="signup-password">Password Baru</label>
-            </div>
+        <div class="field-group">
+          <label for="reg-confirm" class="field-label">Konfirmasi Password</label>
+          <div class="password-field">
+            <input type="password" id="reg-confirm" name="confirm_password" class="field-input password-input" required>
+          </div>
+        </div>
 
-            <div class="floating-group">
-              <input type="password" id="signup-confirm" name="confirm" placeholder=" " required>
-              <label for="signup-confirm">Ulangi Password</label>
-            </div>
+        <button type="submit" class="btn-primary">Daftar</button>
 
-            <button type="submit" class="btn-primary">Buat Akun</button>
-          </form>
-        </section>
-      </div>
-    </main>
-  </div>
-
+        <footer class="auth-footer-switch">
+          <span>Sudah punya akun? </span>
+          <label for="mode-toggle" class="auth-link switch-trigger">Masuk di sini</label>
+        </footer>
+      </form>
+    </section>
+  </main>
 </body>
 </html>
