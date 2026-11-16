@@ -7,26 +7,27 @@
 }
 
 :root {
-  --bg-page: #f1f2f4;
-  --bg-surface: #ffffff;
-  --bg-muted: #f7f8f9;
-  --primary: #5b7290;
-  --primary-dark: #43556d;
-  --primary-hover: #4e637e;
-  --primary-ring: rgba(91, 114, 144, 0.18);
-  --text-main: #242930;
-  --text-muted: #68707a;
-  --border-color: #cfd4dc;
-  --sidebar-kicker: #d5dde7;
-  --sidebar-desc: #e2e7ee;
-  --sidebar-text: #f3f5f8;
-  --sidebar-check: #b8c5d6;
-  --error-bg: #f4e6e6;
-  --error-text: #8c4646;
-  --error-border: #cfa3a3;
-  --success-bg: #e5f0e9;
-  --success-text: #3d6e50;
-  --success-border: #9ec2ab;
+  --bg-page: #13161a;
+  --bg-surface: #1b2026;
+  --bg-muted: #232931;
+  --primary: #43546a;
+  --primary-dark: #283341;
+  --primary-hover: #526680;
+  --primary-ring: rgba(82, 102, 128, 0.28);
+  --text-main: #e2e6ec;
+  --text-muted: #8b94a0;
+  --text-accent: #9bb0ca;
+  --border-color: #303742;
+  --sidebar-kicker: #a7b4c4;
+  --sidebar-desc: #c4cdd8;
+  --sidebar-text: #dce2ea;
+  --sidebar-check: #8fa3bc;
+  --error-bg: #362224;
+  --error-text: #d99b9b;
+  --error-border: #663d41;
+  --success-bg: #1f3328;
+  --success-text: #8fc7a6;
+  --success-border: #3a614b;
 }
 
 .sr-only {
@@ -53,8 +54,9 @@ body.portal-shell {
   max-width: 880px;
   min-height: 520px;
   background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
   border-radius: 24px;
-  box-shadow: 0 24px 48px -12px rgba(36, 41, 48, 0.12);
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.55);
   display: grid;
   grid-template-columns: 1fr 1.15fr;
   overflow: hidden;
@@ -62,19 +64,20 @@ body.portal-shell {
 
 .brand-aside {
   background: linear-gradient(155deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: #ffffff;
+  color: #f1f4f8;
   padding: 44px 36px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-right: 1px solid var(--border-color);
 }
 
 .brand-badge {
   width: 68px;
   height: 68px;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(19, 22, 26, 0.35);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 16px;
   padding: 10px;
   display: grid;
@@ -102,6 +105,7 @@ body.portal-shell {
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 12px;
+  color: #f8fafc;
 }
 
 .brand-desc {
@@ -117,7 +121,7 @@ body.portal-shell {
   gap: 10px;
   font-size: 0.85rem;
   color: var(--sidebar-text);
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 20px;
 }
 
@@ -140,6 +144,7 @@ body.portal-shell {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
   padding: 5px;
   border-radius: 12px;
   margin-bottom: 28px;
@@ -240,16 +245,20 @@ body.portal-shell {
   transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
 }
 
+.input-control::placeholder {
+  color: #5b6370;
+}
+
 .input-control:focus {
-  background-color: var(--bg-surface);
-  border-color: var(--primary);
+  background-color: var(--bg-page);
+  border-color: var(--primary-hover);
   box-shadow: 0 0 0 3px var(--primary-ring);
 }
 
 .text-action {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text-accent);
   text-decoration: none;
 }
 
@@ -272,7 +281,7 @@ body.portal-shell {
 }
 
 .check-box {
-  accent-color: var(--primary);
+  accent-color: var(--primary-hover);
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -282,10 +291,10 @@ body.portal-shell {
   width: 100%;
   padding: 12px 16px;
   background-color: var(--primary);
-  color: #ffffff;
+  color: #f8fafc;
   font-size: 0.95rem;
   font-weight: 700;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.15s;
@@ -307,9 +316,9 @@ body.portal-shell {
 
 #tab-signin:checked ~ .split-frame .seg-signin,
 #tab-register:checked ~ .split-frame .seg-register {
-  background-color: var(--bg-surface);
-  color: var(--primary);
-  box-shadow: 0 2px 6px rgba(36, 41, 48, 0.08);
+  background-color: var(--bg-muted);
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 #tab-signin:checked ~ .split-frame .view-signin {
@@ -329,6 +338,8 @@ body.portal-shell {
   .brand-aside {
     padding: 28px 24px;
     gap: 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .brand-highlights {
