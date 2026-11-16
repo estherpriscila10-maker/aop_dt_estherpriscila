@@ -3,80 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Portal Sekolah — Login</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="loginstyle.css">
 </head>
-<body class="auth-page">
-  <input type="checkbox" id="mode-toggle" class="is-hidden" aria-hidden="true">
+<body class="portal-shell">
+  <input type="radio" name="portal-nav" id="tab-signin" class="sr-only" checked>
+  <input type="radio" name="portal-nav" id="tab-register" class="sr-only">
 
-  <main class="auth-container">
-    <div class="auth-accent-bar"></div>
-    
-    <section class="auth-body">
-      <header class="auth-header">
-        <div class="auth-logo-box">
-          <img src="logo.png" alt="Logo" class="auth-logo">
-        </div>
+  <div class="split-frame">
+    <aside class="brand-aside">
+      <div class="brand-badge">
+        <img src="logo.png" alt="Logo" class="brand-emblem">
+      </div>
+      <div class="brand-copy">
+        <span class="brand-kicker">Sistem Informasi Akademik</span>
+        <h2 class="brand-headline">Portal Akses Siswa & Staf</h2>
+        <p class="brand-desc">Kelola data akademik, jadwal, dan profil sekolah Anda dalam satu pintu terpadu.</p>
+      </div>
+      <ul class="brand-highlights">
+        <li>Akses cepat dengan akun sekolah</li>
+        <li>Pendaftaran akun mandiri</li>
+        <li>Keamanan sesi terintegrasi</li>
+      </ul>
+    </aside>
 
-        <h1 class="auth-title signin-heading">Masuk ke akun Anda</h1>
-        <p class="auth-subtitle signin-heading">Gunakan username dan password sekolah.</p>
+    <main class="workspace-panel">
+      <nav class="segmented-menu" aria-label="Menu Akun">
+        <label for="tab-signin" class="seg-item seg-signin">Masuk</label>
+        <label for="tab-register" class="seg-item seg-register">Daftar Akun</label>
+      </nav>
 
-        <h1 class="auth-title register-heading">Buat akun baru</h1>
-        <p class="auth-subtitle register-heading">Daftar untuk membuat akun sekolah Anda.</p>
+      <header class="workspace-header">
+        <h1 class="workspace-title view-signin">Masuk ke akun Anda</h1>
+        <p class="workspace-subtitle view-signin">Gunakan username dan password sekolah.</p>
+
+        <h1 class="workspace-title view-register">Buat akun baru</h1>
+        <p class="workspace-subtitle view-register">Daftar untuk membuat akun sekolah Anda.</p>
       </header>
 
-      <form id="form-signin" class="auth-form" action="CV2.html" method="GET">
-        <div class="field-group">
-          <label for="signin-user" class="field-label">Username</label>
-          <input type="text" id="signin-user" name="username" class="field-input" required autofocus>
+      <form id="form-signin" class="portal-form view-signin" action="CV2.html" method="GET">
+        <div class="input-block">
+          <label for="signin-user" class="input-label">Username</label>
+          <input type="text" id="signin-user" name="username" class="input-control" placeholder="Masukkan username" required autofocus>
         </div>
 
-        <div class="field-group">
-          <label for="signin-pass" class="field-label">Password</label>
-          <input type="password" id="signin-pass" name="password" class="field-input" required>
+        <div class="input-block">
+          <div class="label-split">
+            <label for="signin-pass" class="input-label">Password</label>
+            <a href="#" class="text-action">Lupa password?</a>
+          </div>
+          <input type="password" id="signin-pass" name="password" class="input-control" placeholder="••••••••" required>
         </div>
 
-        <div class="auth-meta-row">
-          <label class="remember-control">
-            <input type="checkbox" name="remember" class="remember-checkbox">
-            <span class="remember-text">Ingat saya</span>
+        <div class="check-row">
+          <label class="check-label">
+            <input type="checkbox" name="remember" class="check-box">
+            <span>Ingat saya</span>
           </label>
-          <a href="#" class="auth-link">Lupa password?</a>
         </div>
 
-        <button type="submit" class="btn-primary">Masuk</button>
-
-        <footer class="auth-footer-switch">
-          <span>Belum punya akun? </span>
-          <label for="mode-toggle" class="auth-link switch-trigger">Daftar di sini</label>
-        </footer>
+        <button type="submit" class="action-submit">Masuk ke Portal</button>
       </form>
 
-      <form id="form-register" class="auth-form" action="CV2.html" method="GET">
-        <div class="field-group">
-          <label for="reg-user" class="field-label">Buat Username</label>
-          <input type="text" id="reg-user" name="new_username" class="field-input" required>
+      <form id="form-register" class="portal-form view-register" action="CV2.html" method="GET">
+        <div class="input-block">
+          <label for="reg-user" class="input-label">Buat Username</label>
+          <input type="text" id="reg-user" name="new_username" class="input-control" placeholder="Pilih username baru" required>
         </div>
 
-        <div class="field-group">
-          <label for="reg-pass" class="field-label">Buat Password</label>
-          <input type="password" id="reg-pass" name="new_password" class="field-input" required>
+        <div class="input-grid">
+          <div class="input-block">
+            <label for="reg-pass" class="input-label">Buat Password</label>
+            <input type="password" id="reg-pass" name="new_password" class="input-control" placeholder="••••••••" required>
+          </div>
+
+          <div class="input-block">
+            <label for="reg-confirm" class="input-label">Konfirmasi Password</label>
+            <input type="password" id="reg-confirm" name="confirm_password" class="input-control" placeholder="••••••••" required>
+          </div>
         </div>
 
-        <div class="field-group">
-          <label for="reg-confirm" class="field-label">Konfirmasi Password</label>
-          <input type="password" id="reg-confirm" name="confirm_password" class="field-input" required>
-        </div>
-
-        <button type="submit" class="btn-primary">Daftar</button>
-
-        <footer class="auth-footer-switch">
-          <span>Sudah punya akun? </span>
-          <label for="mode-toggle" class="auth-link switch-trigger">Masuk di sini</label>
-        </footer>
+        <button type="submit" class="action-submit">Daftar Sekarang</button>
       </form>
-    </section>
-  </main>
+    </main>
+  </div>
 </body>
 </html>
