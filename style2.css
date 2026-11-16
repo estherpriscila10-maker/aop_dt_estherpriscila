@@ -29,7 +29,7 @@ body {
     padding: 2rem 1rem;
 }
 
-.e-cv-container {
+.esther-cv-container {
     max-width: 1080px;
     margin: 0 auto;
     background-color: var(--bg-card);
@@ -39,7 +39,7 @@ body {
     padding: 2.5rem;
 }
 
-.e-profile-section {
+.esther-profile-section {
     display: flex;
     gap: 2.5rem;
     align-items: flex-start;
@@ -47,7 +47,7 @@ body {
     border-bottom: 1.5px solid var(--border-muted);
 }
 
-.e-profile-photo-wrapper {
+.esther-profile-photo-wrapper {
     flex-shrink: 0;
     width: 190px;
     display: flex;
@@ -56,19 +56,19 @@ body {
     gap: 1rem;
 }
 
-.e-profile-photo-link {
+.esther-profile-photo-link {
     display: block;
     text-decoration: none;
     border-radius: var(--radius-md);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.e-profile-photo-link:hover {
+.esther-profile-photo-link:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-.e-profile-photo {
+.esther-profile-photo {
     width: 190px;
     height: 220px;
     border-radius: var(--radius-md);
@@ -78,7 +78,7 @@ body {
     box-shadow: var(--shadow-sm);
 }
 
-.e-profile-photo img {
+.esther-profile-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -86,11 +86,11 @@ body {
     transition: transform 0.25s ease;
 }
 
-.e-profile-photo-link:hover .e-profile-photo img {
+.esther-profile-photo-link:hover .esther-profile-photo img {
     transform: scale(1.03);
 }
 
-.e-profile-email-btn {
+.esther-profile-email-btn {
     display: block;
     width: 100%;
     text-align: center;
@@ -105,21 +105,21 @@ body {
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.e-profile-email-btn:hover {
+.esther-profile-email-btn:hover {
     background-color: var(--primary-hover);
     transform: translateY(-1px);
 }
 
-.e-header-text {
+.esther-header-text {
     flex: 1;
     min-width: 0;
 }
 
-.e-main-header {
+.esther-main-header {
     margin-bottom: 1.25rem;
 }
 
-.e-main-header h1 {
+.esther-main-header h1 {
     font-size: clamp(1.6rem, 3vw, 2.25rem);
     font-weight: 800;
     color: var(--text-main);
@@ -127,42 +127,42 @@ body {
     line-height: 1.2;
 }
 
-.e-main-header h2 {
+.esther-main-header h2 {
     font-size: clamp(1rem, 1.8vw, 1.2rem);
     font-weight: 600;
     color: var(--text-muted);
     margin-top: 0.25rem;
 }
 
-.e-biodata-grid {
+.esther-biodata-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
 }
 
-.e-biodata-table {
+.esther-biodata-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
 }
 
-.e-biodata-table td {
+.esther-biodata-table td {
     padding: 0.35rem 0.25rem;
     vertical-align: top;
 }
 
-.e-biodata-table td:first-child {
+.esther-biodata-table td:first-child {
     width: 44%;
     color: var(--text-muted);
     font-weight: 500;
 }
 
-.e-biodata-table td:nth-child(2) {
+.esther-biodata-table td:nth-child(2) {
     width: 14px;
     color: var(--text-muted);
 }
 
-.e-biodata-table td:last-child {
+.esther-biodata-table td:last-child {
     color: var(--text-main);
     font-weight: 500;
     word-break: break-word;
@@ -172,7 +172,7 @@ section {
     margin-top: 2.25rem;
 }
 
-.e-section-title {
+.esther-section-title {
     display: flex;
     align-items: center;
     font-size: 0.95rem;
@@ -181,7 +181,7 @@ section {
     margin-bottom: 1.25rem;
 }
 
-.e-section-title span {
+.esther-section-title span {
     background-color: #ffffff;
     color: var(--text-main);
     padding: 0.5rem 1.1rem;
@@ -189,7 +189,7 @@ section {
     border: 1.5px solid var(--border-color);
 }
 
-.e-section-title::after {
+.esther-section-title::after {
     content: "";
     flex: 1;
     height: 1.5px;
@@ -197,13 +197,13 @@ section {
     margin-left: 1rem;
 }
 
-.e-card-grid.e-unified-3-col {
+.esther-card-grid.esther-unified-3-col {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
 }
 
-.e-square-card {
+.esther-square-card {
     border-radius: var(--radius-md);
     border: 1.5px solid var(--border-color);
     background-color: var(--bg-subtle);
@@ -212,20 +212,20 @@ section {
     display: flex;
 }
 
-.e-square-card:hover {
+.esther-square-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-sm);
 }
 
-.e-card-formal {
+.esther-card-formal {
     border-top: 4px solid var(--primary);
 }
 
-.e-card-skills {
+.esther-card-skills {
     border-top: 4px solid var(--accent);
 }
 
-.e-card-overlay {
+.esther-card-overlay {
     padding: 1.35rem;
     display: flex;
     flex-direction: column;
@@ -233,7 +233,7 @@ section {
     width: 100%;
 }
 
-.e-card-badge {
+.esther-card-badge {
     align-self: flex-start;
     font-size: 0.7rem;
     font-weight: 700;
@@ -243,25 +243,25 @@ section {
     border: 1px solid var(--border-color);
 }
 
-.e-badge-blue {
+.esther-badge-blue {
     background-color: #ffffff;
     color: var(--text-main);
 }
 
-.e-card-sub-info {
+.esther-card-sub-info {
     font-size: 0.825rem;
     font-weight: 600;
     color: var(--text-muted);
 }
 
-.e-card-main-title {
+.esther-card-main-title {
     font-size: 1rem;
     font-weight: 700;
     color: var(--text-main);
     line-height: 1.35;
 }
 
-.e-card-desc {
+.esther-card-desc {
     font-size: 0.875rem;
     color: var(--text-muted);
     margin-top: auto;
@@ -269,25 +269,25 @@ section {
 }
 
 @media (max-width: 900px) {
-    .e-cv-container {
+    .esther-cv-container {
         padding: 1.75rem;
     }
 
-    .e-profile-section {
+    .esther-profile-section {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
     }
 
-    .e-header-text {
+    .esther-header-text {
         width: 100%;
     }
 
-    .e-main-header {
+    .esther-main-header {
         text-align: center;
     }
 
-    .e-card-grid.e-unified-3-col {
+    .esther-card-grid.esther-unified-3-col {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
@@ -297,30 +297,30 @@ section {
         padding: 0.75rem 0.5rem;
     }
 
-    .e-cv-container {
+    .esther-cv-container {
         padding: 1.25rem;
         border-radius: var(--radius-md);
     }
 
-    .e-profile-photo-wrapper {
+    .esther-profile-photo-wrapper {
         width: 160px;
     }
 
-    .e-profile-photo {
+    .esther-profile-photo {
         width: 160px;
         height: 185px;
     }
 
-    .e-biodata-grid {
+    .esther-biodata-grid {
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
 
-    .e-biodata-table {
+    .esther-biodata-table {
         font-size: 0.85rem;
     }
 
-    .e-card-grid.e-unified-3-col {
+    .esther-card-grid.esther-unified-3-col {
         grid-template-columns: 1fr;
     }
 }
@@ -331,13 +331,13 @@ section {
         padding: 0;
     }
 
-    .e-cv-container {
+    .esther-cv-container {
         box-shadow: none;
         padding: 1.5rem;
         max-width: 100%;
     }
 
-    .e-profile-email-btn {
+    .esther-profile-email-btn {
         display: none;
     }
 }
